@@ -14,8 +14,12 @@ public class FinancialReport {
         }
 
         System.out.println("----- Transacciones -----");
-        for (String transaccion : transacciones) {
-            System.out.println(transaccion);
+        if (transacciones != null) {
+            for (String transaccion : transacciones) {
+                System.out.println(transaccion);
+            }
+        } else {
+            System.out.println("No hay transacciones disponibles.");
         }
     }
 }
