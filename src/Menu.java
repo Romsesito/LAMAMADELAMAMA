@@ -1,10 +1,15 @@
 import java.util.Scanner;
+import java.util.List;
 
 public class Menu {
     private Scanner scanner;
+    private List<String> usuarios;
+    private List<String> contraseñas;
 
-    public Menu() {
+    public Menu(List<String> usuarios, List<String> contraseñas) {
         scanner = new Scanner(System.in);
+        this.usuarios = usuarios;
+        this.contraseñas = contraseñas;
     }
 
     public void mostrar() {
@@ -20,15 +25,15 @@ public class Menu {
 
             switch (opcion) {
                 case 1:
-                    Register register = new Register();
+                    Register register = new Register(usuarios, contraseñas);
                     register.registrar();
                     break;
                 case 2:
-                    Login login = new Login();
+                    Login login = new Login(usuarios, contraseñas);
                     login.iniciarSesion();
                     break;
                 case 3:
-                    DeleteAccount deleteAccount = new DeleteAccount();
+                    DeleteAccount deleteAccount = new DeleteAccount(usuarios, contraseñas);
                     deleteAccount.eliminarCuenta();
                     break;
                 case 4:
