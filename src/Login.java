@@ -23,6 +23,10 @@ public class Login {
         int indiceUsuario = usuarios.indexOf(nombreUsuario);
         if (indiceUsuario != -1 && contraseñas.get(indiceUsuario).equals(contraseña)) {
             System.out.println("¡Inicio de sesión exitoso! ¡Felicidades!");
+
+            // Redirigir al usuario a la clase Dashboard
+            Dashboard dashboard = new Dashboard();
+            dashboard.mostrar();
         } else {
             System.out.println("Nombre de usuario o contraseña incorrectos. Vuelva a intentarlo.");
         }
