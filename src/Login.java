@@ -7,14 +7,11 @@ public class Login {
     private List<String> transacciones;
     private Scanner scanner;
 
-    public Login(List<String> usuarios, List<String> contraseñas, List<String> transacciones) {
+    public Login(List<String> usuarios, List<String> contraseñas) {
         this.usuarios = usuarios;
         this.contraseñas = contraseñas;
         this.transacciones = transacciones;
         this.scanner = new Scanner(System.in);
-    }
-
-    public Login(List<String> usuarios, List<String> contraseñas) {
     }
 
     public void iniciarSesion() {
