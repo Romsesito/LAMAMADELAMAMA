@@ -4,12 +4,17 @@ import java.util.Scanner;
 public class Login {
     private List<String> usuarios;
     private List<String> contraseñas;
+    private List<String> transacciones;
     private Scanner scanner;
 
-    public Login(List<String> usuarios, List<String> contraseñas) {
+    public Login(List<String> usuarios, List<String> contraseñas, List<String> transacciones) {
         this.usuarios = usuarios;
         this.contraseñas = contraseñas;
-        scanner = new Scanner(System.in);
+        this.transacciones = transacciones;
+        this.scanner = new Scanner(System.in);
+    }
+
+    public Login(List<String> usuarios, List<String> contraseñas) {
     }
 
     public void iniciarSesion() {
@@ -25,7 +30,7 @@ public class Login {
             System.out.println("¡Inicio de sesión exitoso! ¡Felicidades!");
 
             // Redirigir al usuario a la clase Dashboard
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(usuarios, contraseñas, transacciones);
             dashboard.mostrar();
         } else {
             System.out.println("Nombre de usuario o contraseña incorrectos. Vuelva a intentarlo.");

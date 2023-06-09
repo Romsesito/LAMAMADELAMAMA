@@ -14,6 +14,10 @@ public class Dashboard {
         this.transacciones = transacciones;
     }
 
+    public Dashboard() {
+
+    }
+
     public void mostrar() {
         int opcion;
         do {
